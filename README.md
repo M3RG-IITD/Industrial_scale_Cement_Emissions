@@ -1,4 +1,4 @@
-# Prediction, forecast and control of cement emissions.
+# Prediction, forecast and control of cement emissions
 Full paper can be found at the following link: [Paper_name_here](Link_here)
 
 ## Reproducing the Environment
