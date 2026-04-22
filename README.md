@@ -83,6 +83,84 @@ Creating the environment from the .yaml file can take up to 30-45 mins.
 Once the conda environment is set up, it can be used to run the code and demo, provided the specified hardware and software requirements are met.
 ## Code functionality: pseudocode for NOx control framework
 
+**Input:**
+- Initial plant state X₀ (NOx, clinker flow, free lime, process variables)  
+- Trained ML surrogate models:  
+  - M_NOx → predicts NOx emissions  
+  - M_clinker → predicts clinker flow rate  
+  - M_fCaO → predicts free lime (f-CaO)  
+- Historical plant data (for correlation and realism constraints)  
+
+**Output:**
+- Optimized decision variables (DVs)  
+- Minimized NOx value  
+- Validated control recommendations  
+
+---
+
+**1. Define Decision Variables (DVs):**  
+Select controllable process parameters (e.g., air flows, fuel rates, fan speed, kiln pressure)
+
+**2. Fix Non-controllable Inputs:**  
+Keep raw meal flow rate and chemistry constant
+
+**3. Define Constraints:**  
+- Each DV can vary within ±5% of its initial value  
+- Total fuel consumption must not increase  
+
+**4. Initialize Genetic Algorithm (GA):**  
+- Generate initial population within bounded DV space  
+- Lock fixed variables (e.g., raw meal flow)  
+
+---
+
+**5. Optimization Loop (GA):**  
+
+For each generation:  
+
+- For each candidate solution x in the population:  
+  - Check constraints; if violated, assign penalty and skip  
+  - Predict NOx using surrogate model: NOx_pred = M_NOx(x)  
+  - Compute correlation penalty (Pcorr) using deviation from historical relationships  
+  - Compute realism penalty (Preal) using deviation from historical data manifold  
+  - Predict clinker flow: Clinker_pred = M_clinker(x)  
+  - If clinker deviation exceeds limit, add penalty  
+  - Compute objective:  
+    J(x) = NOx_pred + Wcorr * Pcorr + Wreal * Preal  
+
+- Apply GA operations:  
+  - Selection (tournament selection)  
+  - Crossover (one-point crossover)  
+  - Mutation (bounded perturbations)  
+
+- Form next generation population  
+
+---
+
+**6. Select Optimal Solution:**  
+Choose the solution x* with the minimum objective value J(x)
+
+---
+
+**7. KPI Validation:**  
+- Predict clinker flow and free lime using surrogate models  
+- Check constraints:  
+  - Clinker flow variation ≤ 0.5%  
+  - 0.5 ≤ fCaO ≤ 1.5  
+- Accept solution if all constraints are satisfied; otherwise reject  
+
+---
+
+**8. Output Results:**  
+- Optimized decision variables (x*)  
+- Reduced NOx level  
+- KPI validation status  
+
+---
+
+**9. Optional Practical Validation:**  
+Compare optimized solution with historical plant states using similarity metrics  
+
 ## Demo
 After setting up the conda environment and ensuring the system meets the specified requirements, follow the steps below to run the demo:
 
