@@ -9,11 +9,10 @@
     - [Python dependencies](#python-dependencies)
 - [Installation guide](#installation-guide)
 - [Reproducing the conda environment](#reproducing-the-conda-environment)
-- [Code functionality: pseudocode for NO<sub>x</sub> control framework](#code-functionality:-pseudocode-for-NO<sub>x</sub>-control-framework)
+- [Code functionality: pseudocode for NOx control framework](#code-functionality-pseudocode-for-nox-control-framework)
 - [Demo](#demo)
    - [Steps to Run](#steps-to-run)
    - [Expected Output](#expected-output)
-
 - [Queries](#queries)
 
 
@@ -82,7 +81,7 @@ Creating the environment from the .yaml file can take up to 30-45 mins.
    conda list
    ```
 Once the conda environment is set up, it can be used to run the code and demo, provided the specified hardware and software requirements are met.
-## Code functionality: pseudocode for NO<sub>x</sub> control framework
+## Code functionality: pseudocode for NOx control framework
 
 ## Demo
 After setting up the conda environment and ensuring the system meets the specified requirements, follow the steps below to run the demo:
