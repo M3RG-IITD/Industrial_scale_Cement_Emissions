@@ -2,7 +2,7 @@
 
 ## Table of Contents
 - [Overview](##Overview)
-- [System requirements](#System requirements)
+- [System requirements](#System_requirements)
 - - [Hardware requirements](#results)
 - - [Software requirements](#results)
 - - - [OS requirements](#results)
@@ -16,7 +16,7 @@ This work establishes a generalizable framework for data-driven emission control
 hardware. We benchmark nine machine learning architectures, and we observe that prediction error varies∼3–5x across plants due to variation in data richness. Incorporating short-term process history nearly triples NOx prediction accuracy, revealing that NOx formation carries substantial process memory, a timescale dependence that is absent in CO and CO2. Further, we develop models that forecast NOx overshoots as early as nine minutes, providing a buffer for operational adjustments. The developed framework controls NOx formation at the source, reducing NH3 consumption in downstream
 SNCR. Surrogate model projections estimate a∼34–64% reduction in NOx while preserving clinker quality, corresponding to a reduction of∼290 t NOx/year and∼58,000 USD/year in NH3 savings. Full paper can be found at the following link: [ArXiv reprint](Link_here)
 
-# System requirements
+# System_requirements
 
 ## Hardware requirements
 The proposed framework was developed on a system equipped with an Intel® Xeon® Gold 6226R CPU (32 physical cores, 64 threads) and 62.5 GB of RAM. GPU-accelerated models, such as XGBoost, were trained using an NVIDIA RTX A2000 12 GB GPU with driver version 580.65.06 and CUDA version 13.0, utilizing the gpu hist tree method.
