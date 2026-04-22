@@ -1,1 +1,3 @@
-Download the demo data from this doi:
+Download the following data files in this directory (Demo/demo_data):
+1. Download historic_data.pkl in this directory from: https://drive.google.com/file/d/1ek7-w6XNx1mX1JUiv0172gpXxjotjSax/view?usp=share_link
+2. Download filtered_data.pkl in this directory from: https://drive.google.com/file/d/1z7MOe5A6Y8CGrJMnXdRNQ5aGMBPA24lC/view?usp=share_link
