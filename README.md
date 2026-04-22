@@ -3,13 +3,14 @@
 ## Table of Contents
 - [Overview](##Overview)
 - [System requirements](#System_requirements)
-- - [Hardware requirements](#results)
-- - [Software requirements](#results)
-- - - [OS requirements](#results)
-- - - [Python dependencies](#results)
-- [Installation guide](#results)
-- [Reproducing the environment for model training & testing](#results)
-- [Demo](#results)
+- - [Hardware requirements](##Hardware_requirements)
+- - [Software requirements](##Software_requirements)
+- - - [OS requirements](###OS_requirements)
+- - - [Python dependencies](###Python_dependencies)
+- [Installation guide](##Installation_guide)
+- [Reproducing the conda environment](##Reproducing_the_conda_environment)
+- [Demo](##Demo)
+- [Queries](##Queries)
 
 ## Overview
 This work establishes a generalizable framework for data-driven emission control in cement production, offering a pathway toward low-emission operation without structural modifications or additional
@@ -18,15 +19,15 @@ SNCR. Surrogate model projections estimate a∼34–64% reduction in NOx while p
 
 # System_requirements
 
-## Hardware requirements
+## Hardware_requirements
 The proposed framework was developed on a system equipped with an Intel® Xeon® Gold 6226R CPU (32 physical cores, 64 threads) and 62.5 GB of RAM. GPU-accelerated models, such as XGBoost, were trained using an NVIDIA RTX A2000 12 GB GPU with driver version 580.65.06 and CUDA version 13.0, utilizing the gpu hist tree method.
 
-## Software requirements
+## Software_requirements
 
-### OS requirements
+### OS_requirements
 The framework was trained, validated, and tested on a Linux machine running Ubuntu 22.04 with Python 3.9.12. 
 
-### Python dependencies
+### Python_dependencies
 The developed framework requires the following Python libraries.
 | Library Type         | Library Name          | Version   |
 |---------------------|----------------------|-----------|
@@ -53,10 +54,10 @@ The developed framework requires the following Python libraries.
 | GPU                 | pynvml               | 7.352.0   |
 | Progress Bar        | tqdm                 | 4.65.0    |
 
-## Installation guide:
+## Installation_guide:
 To replicate the environment used for model training and analysis, ensure you have Conda installed. If not, download it from [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/).
 
-## Reproducing the environment for model training & testing:
+## Reproducing_the_conda_environment:
 
 ### 1. Clone the Repository:
    ```bash
@@ -77,5 +78,6 @@ To replicate the environment used for model training and analysis, ensure you ha
    ```
 ## Demo:
 
+## Queries:
 For any queries on the work, please email cez218290@iitd.ac.in.
 
