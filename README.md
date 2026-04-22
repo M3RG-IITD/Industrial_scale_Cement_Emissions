@@ -10,6 +10,9 @@
 - [Installation guide](#installation-guide)
 - [Reproducing the conda environment](#reproducing-the-conda-environment)
 - [Demo](#demo)
+   - [Steps to Run](#steps-to-run)
+   - [Expected Output](#expected-output)
+
 - [Queries](#queries)
 
 
@@ -55,7 +58,7 @@ The developed framework requires the following Python libraries.
 | Progress Bar        | tqdm                 | 4.65.0    |
 
 ## Installation guide:
-To replicate the environment used for model training and analysis, ensure you have Conda installed. If not, download it from [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/).
+To replicate the environment used for model training and analysis, ensure you have Conda installed. If not, download it from [Miniconda](https://docs.conda.io/en/latest/miniconda.html) (takes upto 5 mins) or [Anaconda](https://www.anaconda.com/) (takes up to 20 mins).
 
 ## Reproducing the conda environment
 
@@ -68,6 +71,7 @@ To replicate the environment used for model training and analysis, ensure you ha
    ```bash
    conda env create -f Conda_Environment/environment.yaml
    ```
+Creating the environment from the .yaml file can take up to 30-45 mins.
 ### 3. Activate the environment:
    ```bash
    conda activate base
@@ -76,8 +80,19 @@ To replicate the environment used for model training and analysis, ensure you ha
    ```bash
    conda list
    ```
+Once the conda environment is set up, it can be used to run the code and demo, provided the specified hardware and software requirements are met.
 ## Demo
+After setting up the conda environment and ensuring the system meets the specified requirements, follow the steps below to run the demo:
 
+### Steps to Run
+1. Navigate to the `Demo` folder in this repository  
+2. Launch Jupyter Notebook:
+   ```bash
+   jupyter notebook
+3. Open the Demo.ipynb file
+4. Run all cells sequentially to execute the NO<sub>x</sub> control framework
+### Expected Output
+Successful execution of the Demo notebook will load and preprocess the input process data, display model predictions for NO<sub>x</sub> emissions, and provide insights into emission control behavior.
 ## Queries
 For any queries on the work, please email cez218290@iitd.ac.in.
 
