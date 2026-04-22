@@ -1,30 +1,31 @@
 # A Multi-Plant Machine Learning Framework for Emission Prediction, Forecasting, and Control in Cement Manufacturing
 
 ## Table of Contents
-- [Overview](##Overview)
-- [System requirements](#System_requirements)
-- - [Hardware requirements](##Hardware_requirements)
-- - [Software requirements](##Software_requirements)
-- - - [OS requirements](###OS_requirements)
-- - - [Python dependencies](###Python_dependencies)
-- [Installation guide](##Installation_guide)
-- [Reproducing the conda environment](##Reproducing_the_conda_environment)
-- [Demo](##Demo)
-- [Queries](##Queries)
+- [Overview](#overview)
+- [System requirements](#system-requirements)
+  - [Hardware requirements](#hardware-requirements)
+  - [Software requirements](#software-requirements)
+    - [OS requirements](#os-requirements)
+    - [Python dependencies](#python-dependencies)
+- [Installation guide](#installation-guide)
+- [Reproducing the conda environment](#reproducing-the-conda-environment)
+- [Demo](#demo)
+- [Queries](#queries)
+
 
 ## Overview
 This work establishes a generalizable framework for data-driven emission control in cement production, offering a pathway toward low-emission operation without structural modifications or additional
 hardware. We benchmark nine machine learning architectures, and we observe that prediction error varies∼3–5x across plants due to variation in data richness. Incorporating short-term process history nearly triples NOx prediction accuracy, revealing that NOx formation carries substantial process memory, a timescale dependence that is absent in CO and CO2. Further, we develop models that forecast NOx overshoots as early as nine minutes, providing a buffer for operational adjustments. The developed framework controls NOx formation at the source, reducing NH3 consumption in downstream
 SNCR. Surrogate model projections estimate a∼34–64% reduction in NOx while preserving clinker quality, corresponding to a reduction of∼290 t NOx/year and∼58,000 USD/year in NH3 savings. Full paper can be found at the following link: [ArXiv reprint](Link_here)
 
-# System_requirements
+# System requirements
 
-## Hardware_requirements
+## Hardware requirements
 The proposed framework was developed on a system equipped with an Intel® Xeon® Gold 6226R CPU (32 physical cores, 64 threads) and 62.5 GB of RAM. GPU-accelerated models, such as XGBoost, were trained using an NVIDIA RTX A2000 12 GB GPU with driver version 580.65.06 and CUDA version 13.0, utilizing the gpu hist tree method.
 
-## Software_requirements
+## Software requirements
 
-### OS_requirements
+### OS requirements
 The framework was trained, validated, and tested on a Linux machine running Ubuntu 22.04 with Python 3.9.12. 
 
 ### Python_dependencies
@@ -57,7 +58,7 @@ The developed framework requires the following Python libraries.
 ## Installation_guide:
 To replicate the environment used for model training and analysis, ensure you have Conda installed. If not, download it from [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/).
 
-## Reproducing_the_conda_environment
+## Reproducing the conda environment
 
 ### 1. Clone the Repository:
    ```bash
