@@ -57,7 +57,7 @@ The developed framework requires the following Python libraries.
 ## Installation_guide:
 To replicate the environment used for model training and analysis, ensure you have Conda installed. If not, download it from [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/).
 
-## Reproducing_the_conda_environment:
+## Reproducing_the_conda_environment
 
 ### 1. Clone the Repository:
    ```bash
@@ -76,8 +76,8 @@ To replicate the environment used for model training and analysis, ensure you ha
    ```bash
    conda list
    ```
-## Demo:
+## Demo
 
-## Queries:
+## Queries
 For any queries on the work, please email cez218290@iitd.ac.in.
 
