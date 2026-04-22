@@ -1,8 +1,8 @@
 # A Multi-Plant Machine Learning Framework for Emission Prediction, Forecasting, and Control in Cement Manufacturing
 
 ## Table of Contents
-- [Overview](## Overview)
-- [System requirements](# System requirements)
+- [Overview](##Overview)
+- [System requirements](#System requirements)
 - - [Hardware requirements](#results)
 - - [Software requirements](#results)
 - - - [OS requirements](#results)
