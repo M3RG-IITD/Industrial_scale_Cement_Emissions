@@ -83,26 +83,29 @@ Creating the environment from the .yaml file can take up to 30-45 mins.
 Once the conda environment is set up, it can be used to run the code and demo, provided the specified hardware and software requirements are met.
 ## Code functionality: pseudocode for NOx control framework
 
-**Input:**
-- Initial plant state X₀ (NOx, clinker flow, free lime, process variables)  
-- Trained ML surrogate models:  
+**Data:**
+- Initial plant state X₀ (NOx, clinker flow, free lime, decision variables)
+- Historical plant data (for correlation and realism constraints)
+
+**ML surrogates:**
+- The following trained ML models are used within the optimization framework:
   - M_NOx → predicts NOx emissions  
   - M_clinker → predicts clinker flow rate  
   - M_fCaO → predicts free lime (f-CaO)  
-- Historical plant data (for correlation and realism constraints)  
 
-**Output:**
-- Optimized decision variables (DVs)  
-- Minimized NOx value  
-- Validated control recommendations  
+
+**Outputs:**
+- Optimized decision variables (DVs) recomendations
+- Minimized NOx emissions  
+- Optimized clinker flow-rate and fCaO
 
 ---
 
 **1. Define Decision Variables (DVs):**  
-Select controllable process parameters (e.g., air flows, fuel rates, fan speed, kiln pressure)
+Select controllable process parameters (e.g., air flows, fuel rates, fan speed, kiln pressure) from the plant data.
 
 **2. Fix Non-controllable Inputs:**  
-Keep raw meal flow rate and chemistry constant
+Raw meal flow rate and chemistry are kept constant
 
 **3. Define Constraints:**  
 - Each DV can vary within ±5% of its initial value  
@@ -110,21 +113,22 @@ Keep raw meal flow rate and chemistry constant
 
 **4. Initialize Genetic Algorithm (GA):**  
 - Generate initial population within bounded DV space  
-- Lock fixed variables (e.g., raw meal flow)  
+- Lock fixed variables (raw meal flow-rate and chemistry)  
 
 ---
 
 **5. Optimization Loop (GA):**  
+Algorithm for optimization:
 
 For each generation:  
-
 - For each candidate solution x in the population:  
   - Check constraints; if violated, assign penalty and skip  
   - Predict NOx using surrogate model: NOx_pred = M_NOx(x)  
   - Compute correlation penalty (Pcorr) using deviation from historical relationships  
   - Compute realism penalty (Preal) using deviation from historical data manifold  
-  - Predict clinker flow: Clinker_pred = M_clinker(x)  
-  - If clinker deviation exceeds limit, add penalty  
+  - Predict clinker flow: Clinker_pred = M_clinker(x)
+  - Predict fCaO: fCaO_pred = M_fCaO(x)  
+  - If clinker_flow/fCaO deviation exceeds limit, add penalty  
   - Compute objective:  
     J(x) = NOx_pred + Wcorr * Pcorr + Wreal * Preal  
 
@@ -147,7 +151,7 @@ Choose the solution x* with the minimum objective value J(x)
 - Check constraints:  
   - Clinker flow variation ≤ 0.5%  
   - 0.5 ≤ fCaO ≤ 1.5  
-- Accept solution if all constraints are satisfied; otherwise reject  
+- Accept solution if all constraints are satisfied, otherwise reject  
 
 ---
 
@@ -158,8 +162,8 @@ Choose the solution x* with the minimum objective value J(x)
 
 ---
 
-**9. Optional Practical Validation:**  
-Compare optimized solution with historical plant states using similarity metrics  
+**9. Historic data based Validation:**  
+Compare optimized solution with historical plant states using Manhattan distance based similarity score
 
 ## Demo
 After setting up the conda environment and ensuring the system meets the specified requirements, follow the steps below to run the demo:
