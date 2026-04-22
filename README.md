@@ -28,7 +28,7 @@ The proposed framework was developed on a system equipped with an Intel® Xeon®
 ### OS requirements
 The framework was trained, validated, and tested on a Linux machine running Ubuntu 22.04 with Python 3.9.12. 
 
-### Python_dependencies
+### Python dependencies
 The developed framework requires the following Python libraries.
 | Library Type         | Library Name          | Version   |
 |---------------------|----------------------|-----------|
@@ -55,7 +55,7 @@ The developed framework requires the following Python libraries.
 | GPU                 | pynvml               | 7.352.0   |
 | Progress Bar        | tqdm                 | 4.65.0    |
 
-## Installation_guide:
+## Installation guide:
 To replicate the environment used for model training and analysis, ensure you have Conda installed. If not, download it from [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/).
 
 ## Reproducing the conda environment
