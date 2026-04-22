@@ -1,10 +1,22 @@
 # A Multi-Plant Machine Learning Framework for Emission Prediction, Forecasting, and Control in Cement Manufacturing
-Full paper can be found at the following link: [ArXiv reprint](Link_here)
 
-## System requirements
-All computations were conducted on a Linux machine running Ubuntu 22.04 with Python 3.9.12. The system was equipped with an Intel® Xeon® Gold 6226R CPU (32 physical cores, 64 threads) and 62.5 GB of RAM. GPU-accelerated models, such as XGBoost, were trained using an NVIDIA RTX A2000 12 GB GPU with driver version 580.65.06 and CUDA version 13.0, utilizing the gpu hist tree method.
+## Overview
+This work establishes a generalizable framework for data-driven emission control in cement production, offering a pathway toward low-emission operation without structural modifications or additional
+hardware. We benchmark nine machine learning architectures, and we observe that prediction error varies∼3–5x across plants due to variation in data richness. Incorporating short-term process history nearly triples NOx prediction accuracy, revealing that NOx formation carries substantial process memory, a timescale dependence that is absent in CO and CO2. Further, we develop models that forecast NOx overshoots as early as nine minutes, providing a buffer for operational adjustments. The developed framework controls NOx formation at the source, reducing NH3 consumption in downstream
+SNCR. Surrogate model projections estimate a∼34–64% reduction in NOx while preserving clinker quality, corresponding to a reduction of∼290 t NOx/year and∼58,000 USD/year in NH3 savings. Full paper can be found at the following link: [ArXiv reprint](Link_here)
 
-## Computational Environment (Python libraries)
+# System requirements
+
+## Hardware requirements
+The proposed framework was developed on a system equipped with an Intel® Xeon® Gold 6226R CPU (32 physical cores, 64 threads) and 62.5 GB of RAM. GPU-accelerated models, such as XGBoost, were trained using an NVIDIA RTX A2000 12 GB GPU with driver version 580.65.06 and CUDA version 13.0, utilizing the gpu hist tree method.
+
+## Software requirements
+
+### OS requirements
+The framework was trained, validated, and tested on a Linux machine running Ubuntu 22.04 with Python 3.9.12. 
+
+### Python Dependencies
+The developed framework requires the following Python libraries.
 | Library Type         | Library Name          | Version   |
 |---------------------|----------------------|-----------|
 | Core                | os                   | built-in  |
@@ -30,27 +42,25 @@ All computations were conducted on a Linux machine running Ubuntu 22.04 with Pyt
 | GPU                 | pynvml               | 7.352.0   |
 | Progress Bar        | tqdm                 | 4.65.0    |
 
-## Instructions on installing the git repo and reproducing the Environment
+## Installation guide:
+To replicate the environment used for model training and analysis, ensure you have Conda installed. If not, download it from [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/).
 
-To replicate the environment used for model training and analysis, follow these steps:
+## Reproducing the environment for model training & testing:
 
-### 1. Install Conda:
-   Ensure you have Conda installed. If not, download it from [Miniconda](https://docs.conda.io/en/latest/miniconda.html) or [Anaconda](https://www.anaconda.com/).
-
-### 2. Clone the Repository:
+### 1. Clone the Repository:
    ```bash
    git clone https://github.com/M3RG-IITD/Industrial-cement-emissions.git
    cd your_repository
    ```
-### 3. Create the environment from the .yaml file:
+### 2. Create the environment from the .yaml file:
    ```bash
    conda env create -f Conda_Environment/environment.yaml
    ```
-### 4. Activate the environment:
+### 3. Activate the environment:
    ```bash
    conda activate base
    ```
-### 5. Check if the environment is present:
+### 4. Check if the environment is present:
    ```bash
    conda list
    ```
