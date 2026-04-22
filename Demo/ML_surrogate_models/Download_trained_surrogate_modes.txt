@@ -1,1 +1,4 @@
-Download the trained Surrogate models from this doi:
+Download the following trained Surrogate models in this directory (Demo/ML_surrogate_models):
+1. clinker_flowrate_model.pkl from: https://drive.google.com/file/d/1bQ0Aec_a0LYo6ewJaKX1S34rcC0JIZnK/view?usp=share_link
+2. fCaO_model.pkl from: https://drive.google.com/file/d/1QLyDzRRiWBcg8NaX-CjE6QAXiBf3cPH2/view?usp=sharing
+3. NOX_control_model.pkl from: https://drive.google.com/file/d/1Ystymevii0hv08ggG8qZ6NYG24YoZG1V/view?usp=sharing
