@@ -94,7 +94,7 @@ After setting up the conda environment and ensuring the system meets the specifi
 3. Open the Demo.ipynb file
 4. Run all cells sequentially to execute the NO<sub>x</sub> control framework
 ### Expected Output
-Successful execution of the Demo notebook will load and preprocess the input process data, display model predictions for NO<sub>x</sub> emissions, and provide insights into emission control behavior.
+Successful execution of the Demo notebook (take ~10 mins) will load and preprocess the input process data, display model predictions for NO<sub>x</sub> emissions, and provide insights into emission control behavior.
 ## Queries
 For any queries on the work, please email cez218290@iitd.ac.in.
 
