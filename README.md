@@ -1,5 +1,5 @@
-# Prediction, forecast and control of cement emissions
-Full paper can be found at the following link: [Paper_name_here](Link_here)
+# A Multi-Plant Machine Learning Framework for Emission Prediction, Forecasting, and Control in Cement Manufacturing
+Full paper can be found at the following link: [ArXiv reprint](Link_here)
 
 ## Reproducing the Environment
 
